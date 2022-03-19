@@ -18,6 +18,6 @@ python setup.py install
 
 ## Supported platforms
 
-- GDB 7.0+
+- GDB 7.2+
 - Python 2.7 and 3.0+
 - Any GDB-supported architecture

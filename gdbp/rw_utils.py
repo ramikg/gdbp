@@ -8,6 +8,7 @@ def get_symbol_address(symbol):
     :param str symbol: The symbol's name
     :return int: The symbol's address
     """
+    # gdb.lookup_symbol was added in GDB 7.2
     symbol_object = gdb.lookup_symbol(symbol)[0]
     return int(symbol_object.value().address)
 
@@ -18,6 +19,7 @@ def read_bytes(address, length):
     :param int length: Number of bytes to read
     :return bytes: The first ``length`` bytes starting at ``address``
     """
+    # gdb.Inferior.read_memory was added in GDB 7.2
     return bytes(gdb.selected_inferior().read_memory(address, length))
 
 
