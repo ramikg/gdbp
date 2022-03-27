@@ -1,5 +1,4 @@
 #include <stdint.h>
-#include <stddef.h>
 
 #define TEST_REGISTER_NAME "edx"
 #define TEST_REGISTER_VALUE_TO_SET (41)
