@@ -1,21 +1,7 @@
 import struct
 
-import gdb
-import pytest
-
 import gdbp
-
-TEST_VARIABLE_NAME = 'test_variable'
-TEST_VARIABLE_ADDRESS = 0x08000000
-TEST_VARIABLE_BYTES = struct.pack('=Q', 0xF123456789ABCDEF)
-
-
-@pytest.fixture(autouse=True)
-def run_before_and_after_tests():
-    gdb.execute('break main')
-    gdb.execute('r')
-    yield
-    gdb.execute('delete breakpoints')
+from common import TEST_VARIABLE_ADDRESS, TEST_VARIABLE_BYTES, TEST_VARIABLE_NAME
 
 
 def test_get_symbol_address():
@@ -104,7 +90,3 @@ def test_read_int64ul():
 
 def test_read_int64sl():
     assert gdbp.read_int64sl(TEST_VARIABLE_ADDRESS) == struct.unpack_from('<q', TEST_VARIABLE_BYTES)[0]
-
-
-exit_code = pytest.main(['--capture=no'])
-gdb.execute('quit {}'.format(exit_code))

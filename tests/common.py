@@ -1,0 +1,5 @@
+import struct
+
+TEST_VARIABLE_NAME = 'test_variable'
+TEST_VARIABLE_ADDRESS = 0x08000000
+TEST_VARIABLE_BYTES = struct.pack('=Q', 0xF123456789ABCDEF)
