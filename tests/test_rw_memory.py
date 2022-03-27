@@ -1,11 +1,7 @@
 import struct
 
 import gdbp
-from common import TEST_VARIABLE_ADDRESS, TEST_VARIABLE_BYTES, TEST_VARIABLE_NAME
-
-
-def test_get_symbol_address():
-    assert gdbp.get_symbol_address(TEST_VARIABLE_NAME) == TEST_VARIABLE_ADDRESS
+from common import TEST_VARIABLE_ADDRESS, TEST_VARIABLE_BYTES
 
 
 def test_read_bytes():
