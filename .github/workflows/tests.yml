@@ -20,15 +20,15 @@ jobs:
 
       - name: Compile test programs
         run: |
-          cd tests
+          cd tests/test_program
           make all
 
       - name: Run x86-32 tests
         run: |
           cd tests
-          gdb test_program_32 -x run_tests.py
+          gdb test_program/test_program_32 -x run_tests.py
 
       - name: Run x86-64 tests
         run: |
           cd tests
-          gdb test_program_64 -x run_tests.py
+          gdb test_program/test_program_64 -x run_tests.py

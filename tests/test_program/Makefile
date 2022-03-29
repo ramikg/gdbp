@@ -1,5 +1,5 @@
 PROGRAM_NAME := test_program
-CFLAGS = -g -Wall -no-pie -fno-stack-protector $(PROGRAM_NAME).ld
+CFLAGS = -g -Wall -no-pie -fno-stack-protector $(PROGRAM_NAME).lds
 
 all: $(PROGRAM_NAME)_32 $(PROGRAM_NAME)_64
 
