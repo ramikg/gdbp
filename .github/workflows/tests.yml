@@ -15,7 +15,6 @@ jobs:
           sudo add-apt-repository --remove ppa:ubuntu-toolchain-r/test
           sudo apt update
           sudo apt install gcc-multilib gdb
-          pip3 install -U pip setuptools
           pip3 install -v .[test]
 
       - name: Compile test programs
